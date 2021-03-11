@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Heartbeats</h1>
+
+    <h3>Enter your Last.fm username:</h3>
+
+    <!--div id="search_container">
+        <form class ="search">
+            <input class="search_bar" type="text">
+            <br>
+            <br>
+            <input class="button" type="submit" value="Generate Results">
+        </form>
+    </div-->
+    <input type="text" name="lastfm_username" id="lastfm_username">
+    <br>
+    <button onclick="reAuthorize(), getUserName()">Generate Results</button>
+    
+    <!--form>
+        <input type="text" name="lastfm_username" id="lastfm_username"><br>
+        
+        <button onclick="reAuthorize(), passUserName()">Generate Results</button>
+    </form-->
+    
+    <script src=strava_api.js></script>
+    <br>
+    <br>
+    Name:<p id="Name"></p>
+    Elapsed Time:<p id="Elapsed"></p>
+    Max Speed<p id="Max Speed"></p>
+    Max Heartrate<p id="Max Heartrate"></p>
+
+
+    <div id="stravaData"></div>
+
+
+</body>
+
+</html>
