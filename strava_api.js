@@ -31,10 +31,11 @@ class userWorkout {
         ///var songsListened
         //var test = 
         //debugger;
-        fetch(activities_link)
-        .then(res => res.json())
-        .then(res => this.makeSongs(res))
-        //debugger;
+        return fetch(activities_link)
+        .then(this.status)
+        .then(this.json)
+        ///.then(res => res.json())
+       // .then(res => this.makeSongs(res))
         //.then(data => this.songsListened = data)
         //.then(res => getSongs(res))
         //this.songsListened = songsListened;
@@ -44,19 +45,33 @@ class userWorkout {
         //this.songsListened = songsListened;
     }
 
-    makeSongs(res) {
+    status(response) {
+        if(response.status >= 200 & response.status < 300) {
+            return Promise.resolve(response)
+        } else {
+            return Promise.reject(new Error(response.statusText))
+        }
+    }
+
+    json(response){
+        //console.log(response.json())
+        return response.json()
+    }
+
+    /*makeSongs(res) {
         var songsListened = res;
         this.songsListened = songsListened;
         var testArray = []
         this.testArray = testArray;
+        debugger;
 
         for (var key of Object.keys(this.songsListened.recenttracks)) {
-            this.testArray.push(track)
+            this.testArray.push(key)
             ///var name = String("Workout " + key);
             //console.log(name)
         }
         
-    }
+    }*/
 }
 
 function getUserName(){
@@ -142,9 +157,10 @@ function makeVar(res){
         workoutObj.convertToUnix(workoutObj.start_date, workoutObj.elapsed_time);
        // console.log(workoutObj.startDateUnix, workoutObj.endDateUnix)
         workoutObj.getUserTracks(workoutObj.startDateUnix, workoutObj.endDateUnix);
+        console.log(test)
         //console.log(workoutObj.songsListened);
         workoutArray.push(workoutObj)
-        //debugger;
+        debugger;
         document.getElementById("Name").innerHTML = JSON.stringify(workoutObj.obj_name)
         document.getElementById("Elapsed").innerHTML = JSON.stringify(workoutObj.elapsed_time)
         document.getElementById("Max Speed").innerHTML = JSON.stringify(workoutObj.max_speed)

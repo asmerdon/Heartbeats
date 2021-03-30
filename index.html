@@ -1,37 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <title>Heartbeats</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
 
 <body>
-    <h1>Heartbeats</h1>
-
+    <div class ="container">
+    <img src="logo.png" class="img-fluid" alt="Responsive image">
+    </div>
+    <div class ="container">
+    <h2> Does  music make you run faster?</h2>
+    <br>
     <h3>Enter your Last.fm username:</h3>
+    <br>
+    </div>
 
-    <!--div id="search_container">
-        <form class ="search">
-            <input class="search_bar" type="text">
-            <br>
-            <br>
-            <input class="button" type="submit" value="Generate Results">
-        </form>
-    </div-->
+    <div class ="container">
     <input type="text" name="lastfm_username" id="lastfm_username">
+    </div>
     <br>
-    <button onclick="reAuthorize(), getUserName()">Generate Results</button>
+    <div class="container">           
+        <button type="button" class="btn btn-danger btn-lg" onclick="reAuthorize(), getUserName(), getSpotifyToken()">Generate Results</button>      
+      </div>
     
-    <!--form>
-        <input type="text" name="lastfm_username" id="lastfm_username"><br>
-        
-        <button onclick="reAuthorize(), passUserName()">Generate Results</button>
-    </form-->
-    
-    <script src=strava_api.js></script>
+    <script src=main.js></script>
     <br>
     <br>
-    Name:<p id="Name"></p>
-    Elapsed Time:<p id="Elapsed"></p>
-    Max Speed<p id="Max Speed"></p>
-    Max Heartrate<p id="Max Heartrate"></p>
-
+    <div class = "container">
+        Name:<p id="Name"></p>
+        Elapsed Time:<p id="Elapsed"></p>
+        Max Speed<p id="Max Speed"></p>
+        Max Heartrate<p id="Max Heartrate"></p>
+    </div>
 
     <div id="stravaData"></div>
 
