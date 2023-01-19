@@ -3,6 +3,10 @@ BSc Final Year Project
 
 This project was developed as my dissertation for university. 
 
+This project can be be found live at: https://asmerdon.github.io/
+
+As well as at https://github.com/asmerdon/asmerdon.github.io
+
 Tech Stack: Javascript, CSS, HTML.
 
 This project was a way to allow for users to see the music that most impacts their workouts. It uses the Strava API to pull a user's workouts, and the Last.fm API to pull the music that was being listened to during their workouts.
